@@ -46,7 +46,7 @@ setup(
     name='flower',
     version=get_package_version(),
     description='Celery Flower',
-    long_description=open('README.rst',encoding='utf-8').read(),
+    long_description=open('README.md', encoding='utf-8').read(),
     author='Mher Movsisyan',
     author_email='mher.movsisyan@gmail.com',
     url='https://github.com/mher/flower',

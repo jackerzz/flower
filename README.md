@@ -28,6 +28,9 @@ cd test/
 celery flower --broker=redis://:myredis@192.168.95.120:6379/2  --address='0.0.0.0'  --port=5555  --basic_auth=admin:Pas1234 --persistent=True --db=logs/flowerdb
 ```
 
+![image-84c50304e399245981047af3c6922a0](img/84c50304e399245981047af3c6922a0.png)
+
+![image-c999c5c270b0cd8416e3431e2195018](img/c999c5c270b0cd8416e3431e2195018.png)
 
 ## 参考资料
 
