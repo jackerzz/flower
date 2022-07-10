@@ -1,0 +1,107 @@
+{
+  "status": 0,
+  "msg": "",
+  "data": {
+    "pages": [
+      {
+        "label": "Home",
+        "url": "/",
+        "redirect": "/tasklist"
+      },
+      {
+        "label": "v1.0.0",
+        "children": [
+          {
+            "label": "配置中心",
+            "url": "/crud",
+            "rewrite": "/crud/list",
+            "icon": "fa fa-cube",
+            "children": [
+              {
+                "label": "进程监控",
+                "url": "/crud/process",
+                "schemaApi": "get:/static/pages/center/procmon.json"
+              },
+              {
+                "label": "端口监控",
+                "url": "/crud/port",
+                "schemaApi": "get:/static/pages/center/port.json"
+              },
+              {
+                "label": "ICMP监控",
+                "url": "/crud/icmp",
+                "schemaApi": "get:/static/pages/center/icmp.json"
+              },
+              {
+                "label": "amq监控",
+                "url": "/crud/amq",
+                "schemaApi": "get:/static/pages/center/amq.json"
+              },
+              {
+                "label": "url监控",
+                "url": "/crud/url",
+                "schemaApi": "get:/static/pages/center/url.json"
+              },
+              {
+                "label": "应用系统",
+                "url": "/crud/systemlist",
+                "schemaApi": "get:/static/pages/center/system_list.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "children": [
+          {
+            "label": "用户管理",
+            "url": "/usermanger",
+            "icon": "fa fa-list-alt",
+            "children": [
+              {
+                "label": "联系人组列表",
+                "url": "/contact_group",
+                "icon": "fa fa-tasks",
+                "schemaApi": "get:/static/pages/center/contact_group.json"
+              },
+              {
+                "label": "联系人列表",
+                "url": "/contacts",
+                "icon": "fa fa-tasks",
+                "schemaApi": "get:/static/pages/center/contacts.json"
+              },
+              {
+                "label": "账号列表",
+                "url": "/account_list",
+                "icon": "fa fa-tasks",
+                "schemaApi": "get:/static/pages/center/account_list.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "children": [
+          {
+            "label": "定时任务",
+            "url": "/tasklist",
+            "icon": "fa fa-tasks",
+            "schemaApi": "get:/static/pages/center/tasklist.json"
+          },
+          {
+            "label": "回收站",
+            "url": "/clear",
+            "icon": "fa fa-tasks",
+            "schemaApi": "get:/static/pages/center/history.json"
+          },
+          {
+            "label": "三名",
+            "url": "/times",
+            "icon": "fa fa-tasks",
+            "schemaApi": "get:/static/pages/center/schema.json"
+          }
+        ]
+      }
+    ]
+  }
+}

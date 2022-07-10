@@ -1,0 +1,170 @@
+{
+    "type": "page",
+    "body": {
+      "type": "service",
+      "data": {
+        "rows": [
+          {
+            "engine": "Trident",
+            "browser": "Internet Explorer 4.0",
+            "platform": "Win 95+",
+            "version": "4",
+            "grade": "X",
+            "id": 1,
+            "children": [
+              {
+                "engine": "Trident",
+                "browser": "Internet Explorer 4.0",
+                "platform": "Win 95+",
+                "version": "4",
+                "grade": "X",
+                "id": 1001
+              },
+              {
+                "engine": "Trident",
+                "browser": "Internet Explorer 5.0",
+                "platform": "Win 95+",
+                "version": "5",
+                "grade": "C",
+                "id": 1002
+              }
+            ]
+          },
+          {
+            "engine": "Trident",
+            "browser": "Internet Explorer 5.0",
+            "platform": "Win 95+",
+            "version": "5",
+            "grade": "C",
+            "id": 2,
+            "children": [
+              {
+                "engine": "Trident",
+                "browser": "Internet Explorer 4.0",
+                "platform": "Win 95+",
+                "version": "4",
+                "grade": "X",
+                "id": 2001
+              },
+              {
+                "engine": "Trident",
+                "browser": "Internet Explorer 5.0",
+                "platform": "Win 95+",
+                "version": "5",
+                "grade": "C",
+                "id": 2002
+              }
+            ]
+          },
+          {
+            "engine": "Trident",
+            "browser": "Internet Explorer 5.5",
+            "platform": "Win 95+",
+            "version": "5.5",
+            "grade": "A",
+            "id": 3,
+            "children": [
+              {
+                "engine": "Trident",
+                "browser": "Internet Explorer 4.0",
+                "platform": "Win 95+",
+                "version": "4",
+                "grade": "X",
+                "id": 3001
+              },
+              {
+                "engine": "Trident",
+                "browser": "Internet Explorer 5.0",
+                "platform": "Win 95+",
+                "version": "5",
+                "grade": "C",
+                "id": 3002
+              }
+            ]
+          },
+          {
+            "engine": "Trident",
+            "browser": "Internet Explorer 6",
+            "platform": "Win 98+",
+            "version": "6",
+            "grade": "A",
+            "id": 4,
+            "children": [
+              {
+                "engine": "Trident",
+                "browser": "Internet Explorer 4.0",
+                "platform": "Win 95+",
+                "version": "4",
+                "grade": "X",
+                "id": 4001
+              },
+              {
+                "engine": "Trident",
+                "browser": "Internet Explorer 5.0",
+                "platform": "Win 95+",
+                "version": "5",
+                "grade": "C",
+                "id": 4002
+              }
+            ]
+          },
+          {
+            "engine": "Trident",
+            "browser": "Internet Explorer 7",
+            "platform": "Win XP SP2+",
+            "version": "7",
+            "grade": "A",
+            "id": 5,
+            "children": [
+              {
+                "engine": "Trident",
+                "browser": "Internet Explorer 4.0",
+                "platform": "Win 95+",
+                "version": "4",
+                "grade": "X",
+                "id": 5001
+              },
+              {
+                "engine": "Trident",
+                "browser": "Internet Explorer 5.0",
+                "platform": "Win 95+",
+                "version": "5",
+                "grade": "C",
+                "id": 5002
+              }
+            ]
+          }
+        ]
+      },
+      "body": [
+        {
+          "type": "table",
+          "source": "$rows",
+          "className": "m-b-none",
+          "columnsTogglable": false,
+          "columns": [
+            {
+              "name": "engine",
+              "label": "Engine"
+            },
+            {
+              "name": "grade",
+              "label": "Grade"
+            },
+            {
+              "name": "version",
+              "label": "Version"
+            },
+            {
+              "name": "browser",
+              "label": "Browser"
+            },
+            {
+              "name": "id",
+              "label": "ID"
+            }
+          ]
+        }
+      ]
+    }
+  }

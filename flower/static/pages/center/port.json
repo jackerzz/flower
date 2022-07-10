@@ -1,0 +1,368 @@
+{
+    "type": "page",
+    "title": "端口监控",
+    "body": [
+        {
+            "type": "container",
+            "body": [
+                {
+                    "type": "tpl",
+                    "tpl": "",
+                    "inline": false
+                }
+            ]
+        },{
+    "type": "crud",
+    "api": "",
+    "bulkActions": [
+        {
+            "label": "批量删除",
+            "type": "button",
+            "level": "danger"
+        }
+    ],
+    "itemActions": [
+    ],
+    "features": [
+        "create",
+        "filter",
+        "bulkDelete",
+        "update",
+        "delete"
+    ],
+    "headerToolbar": [
+        {
+            "label": "新增",
+            "type": "button",
+            "actionType": "dialog",
+            "level": "primary",
+            "dialog": {
+                "title": "新增",
+                "body": {
+                    "type": "form",
+                    "api": "POST:",
+                    "body": [
+                        {
+                            "name": "envi",
+                            "label": "环境",
+                            "type": "input-text"
+                        },
+                        {
+                            "type": "input-text",
+                            "label": "主机名",
+                            "name": "hostname"
+                        },
+                        {
+                            "type": "input-text",
+                            "label": "类型",
+                            "name": "type"
+                        },
+                        {
+                            "type": "input-text",
+                            "label": "通知人组",
+                            "name": "noti_group"
+                        },
+                        {
+                            "type": "input-text",
+                            "label": "主机IP",
+                            "name": "ip"
+                        },
+                        {
+                            "type": "input-text",
+                            "label": "端口",
+                            "name": "port"
+                        },
+                        {
+                            "type": "input-time",
+                            "label": "开始时间",
+                            "name": "stime",
+                            "format": "HHmmss"
+                        },
+                        {
+                            "type": "input-time",
+                            "name": "etime",
+                            "label": "结束时间",
+                            "format": "HHmmss"
+                        },
+                        {
+                            "type": "input-text",
+                            "name": "week",
+                            "label": "星期"
+                        },
+                        {
+                            "type": "input-text",
+                            "name": "alarm_info",
+                            "label": "告警信息"
+                        },
+                        {
+                            "type": "input-text",
+                            "name": "remarks",
+                            "label": "备注"
+                        },
+                        {
+                            "type": "input-text",
+                            "label": "ITIL单号",
+                            "name": "itilnum"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "bulk-actions"
+        },
+        {
+            "type": "export-excel",
+            "tpl": "内容"
+        }
+    ],
+        "filter": {
+          "title": "",
+          "mode": "inline",
+          "wrapWithPanel": false,
+          "submitText": "",
+          "controls": [
+            {
+              "type": "text",
+              "name": "keywords",
+              "placeholder": "通过关键字搜索",
+              "addOn": {
+                "label": "搜索",
+                "type": "submit",
+                "className": "btn-success"
+              },
+              "clearable": true
+            }
+          ],
+          "className": "m-b-sm"
+        },
+    "perPageAvailable": [
+        10
+    ],
+    "messages": {
+    },
+    "mode": "table",
+    "columns": [
+        {
+            "name": "id",
+            "label": "ID",
+            "type": "text",
+			"sortable": true
+        },
+        {
+            "name": "envi",
+            "label": "环境",
+            "type": "text",
+			"sortable": true
+        },
+        {
+            "type": "text",
+            "label": "主机名",
+            "name": "hostname",
+			"sortable": true
+        },
+        {
+            "type": "text",
+            "name": "type",
+            "label": "类型",
+			"sortable": true
+        },
+        {
+            "type": "text",
+            "label": "通知人组",
+            "name": "noti_group",
+			"sortable": true
+        },
+        {
+            "name": "ip",
+            "label": "主机IP",
+            "type": "text",
+			"sortable": true
+        },
+        {
+            "name": "port",
+            "label": "端口",
+            "type": "text",
+			"sortable": true
+        },
+        {
+            "type": "time",
+            "label": "开始时间",
+            "name": "stime",
+            "format": "HHmmss",
+			"sortable": true
+        },
+        {
+            "type": "time",
+            "label": "结束时间",
+            "name": "etime",
+            "format": "HHmmss",
+			"sortable": true
+        },
+        {
+            "type": "text",
+            "label": "星期",
+            "name": "week",
+			"sortable": true
+        },
+        {
+            "type": "text",
+            "label": "告警信息",
+            "name": "alarm_info",
+			"sortable": true
+        },
+        {
+            "type": "text",
+            "label": "备注",
+            "name": "remarks",
+			"sortable": true
+        },
+        {
+            "type": "text",
+            "label": "ITIL单号",
+            "name": "itilnum",
+			"sortable": true
+        },
+        {
+            "type": "text",
+            "label": "创建者",
+            "name": "creator",
+			"sortable": true
+        },
+        {
+            "type": "text",
+            "label": "创建者所属",
+            "name": "creator_group",
+			"sortable": true
+        },
+        {
+            "type": "datetime",
+            "name": "c_time",
+            "label": "创建时间",
+			"sortable": true
+        },
+        {
+            "type": "datetime",
+            "label": "最近修改时间",
+            "name": "l_time",
+			"sortable": true
+        },
+        {
+            "type": "text",
+            "label": "所属系统",
+            "name": "system",
+			"sortable": true
+        },
+        {
+            "type": "operation",
+            "label": "操作",
+            "buttons": [
+                {
+                    "label": "编辑",
+                    "type": "button",
+                    "actionType": "dialog",
+                    "level": "link",
+                    "dialog": {
+                        "title": "编辑",
+                        "body": {
+                            "type": "form",
+                            "api": "xxx/update",
+                            "body": [
+                                {
+                                    "name": "envi",
+                                    "label": "环境",
+                                    "type": "input-text"
+                                },
+                                {
+                                    "type": "input-text",
+                                    "label": "主机名",
+                                    "name": "hostname"
+                                },
+                                {
+                                    "type": "input-text",
+                                    "name": "type",
+                                    "label": "类型"
+                                },
+                                {
+                                    "type": "input-text",
+                                    "label": "通知人组",
+                                    "name": "noti_group"
+                                },
+                                {
+                                    "name": "ip",
+                                    "label": "主机IP",
+                                    "type": "input-text"
+                                },
+                                {
+                                    "name": "port",
+                                    "label": "端口",
+                                    "type": "input-text"
+                                },
+                                {
+                                    "type": "input-time",
+                                    "label": "开始时间",
+                                    "name": "stime",
+                                    "format": "HHmmss"
+                                },
+                                {
+                                    "type": "input-time",
+                                    "label": "结束时间",
+                                    "name": "etime",
+                                    "format": "HHmmss"
+                                },
+                                {
+                                    "type": "input-text",
+                                    "label": "星期",
+                                    "name": "week"
+                                },
+                                {
+                                    "type": "input-text",
+                                    "label": "告警信息",
+                                    "name": "alarm_info"
+                                },
+                                {
+                                    "type": "input-text",
+                                    "label": "备注",
+                                    "name": "remarks"
+                                },
+                                {
+                                    "type": "input-text",
+                                    "label": "ITIL单号",
+                                    "name": "itilnum"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "button",
+                    "label": "删除",
+                    "actionType": "ajax",
+                    "level": "link",
+                    "className": "text-danger",
+                    "confirmText": "确定要删除？",
+                    "api": "POST:"
+                }
+            ]
+        }
+    ],
+    "footerToolbar": [
+        {
+            "type": "pagination",
+            "align": "left"
+        },
+        {
+            "type": "switch-per-page",
+            "tpl": "内容"
+        },
+        {
+            "type": "statistics",
+            "tpl": "内容"
+        }
+    ],
+    "filterTogglable": false,
+    "alwaysShowPagination": true
+}
+	
+    ]
+}

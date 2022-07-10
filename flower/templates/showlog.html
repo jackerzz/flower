@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+{% module Template("navbar.html", active_tab="实时日志") %}
+{% end %}
+
+{% block container %}
+<div id="root" class="app-wrapper"></div>
+{% end %}
+
+{% block extra_scripts %}
+<link rel="stylesheet" title="default" href="{{ static_url('sdk/sdk.css') }}"/>
+<link rel="stylesheet" href="{{ static_url('sdk/helper.css') }}"/>
+<script src="{{ static_url('sdk/sdk.js') }}"></script>
+<script src="{{ static_url('sdk/history.js') }}"></script>
+<script src="{{ static_url('sdk/vue.js') }}"></script>
+<script type="text/javascript">
+    (function () {
+        let amis = amisRequire('amis/embed');
+        // 通过替换下面这个配置来生成不同页面
+        let amisjson = {
+            "type": "page",
+            "title": "监控自动化进程实时日志",
+            "body": [
+                {
+                    "type": "crud",
+                    "syncLocation": false,
+                    "api": {
+                        "method": "get",
+                        "url": "/processinfo",
+                        "data": null
+                    },
+                    "columns": [
+                        {
+                            "name": "environment",
+                            "label": "环境",
+                            "type": "text"
+                        },
+                        {
+                            "name": "name",
+                            "label": "进程",
+                            "type": "text"
+                        },
+                        {
+                            "type": "text",
+                            "label": "状态",
+                            "name": "statename"
+                        },
+                        {
+                            "type": "button-group",
+                            "buttons": [
+                                {
+                                    "type": "button",
+                                    "label": "杀死",
+                                    "actionType": "ajax",
+                                    "dialog": {
+                                        "title": "系统提示",
+                                        "body": "对你点击了"
+                                    },
+                                    "className": "b-danger",
+                                    "level": "danger",
+                                    "api": {
+                                        "method": "post",
+                                        "url": "/processinfo",
+                                        "data": {
+                                            "environment": "${environment}",
+                                            "name": "${name}",
+                                            "action": "stop"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "button",
+                                    "label": "重启",
+                                    "actionType": "ajax",
+                                    "dialog": {
+                                        "title": "系统提示",
+                                        "body": "对你点击了"
+                                    },
+                                    "placeholder": "-",
+                                    "className": "b-warning",
+                                    "level": "light",
+                                    "api": {
+                                        "method": "post",
+                                        "url": "/processinfo",
+                                        "data": {
+                                            "environment": "${environment}",
+                                            "name": "${name}",
+                                            "action": "restart"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "button",
+                                    "label": "查看日志",
+                                    "placeholder": "-",
+                                    "level": "light",
+                                    "actionType": "drawer",
+                                    "drawer": {
+                                        "type": "drawer",
+                                        "title": "实时日志弹窗",
+                                        "body": [
+                                            {
+                                                "type": "log",
+                                                "id": "u:01329133bd14",
+                                                "position": "right",
+                                                "source": {
+                                                    "method": "get",
+                                                    "url": "/viewlog?name=${name}",
+                                                    "cache": 3000
+                                                },
+                                                "className": "m-none p-none b-a w-full"
+                                            }
+                                        ],
+                                        "position": "bottom",
+                                        "closeOnOutside": true,
+                                        "closeOnEsc": true,
+                                        "resizable": true,
+                                        "size": "md",
+                                        "actions": []
+                                    }
+                                }
+                            ],
+                            "id": "u:ec6fa931be11",
+                            "label": "启停",
+                            "placeholder": "-",
+                            "fixed": "",
+                            "toggled": true,
+                            "className": "",
+                            "quickEdit": false
+                        }
+                    ],
+                    "bulkActions": [],
+                    "itemActions": [],
+                    "id": "u:dcd28e10a28a",
+                    "placeholder": "-",
+                    "perPageAvailable": [
+                        10
+                    ],
+                    "messages": {}
+                }
+            ],
+            "messages": {},
+            "style": {
+                "color": "",
+                "backgroundColor": "#ffffff"
+            },
+            "initApi": "",
+            "regions": [
+                "body",
+                "toolbar",
+                "aside",
+                "header"
+            ]
+        };
+        let amisScoped = amis.embed('#root', amisjson);
+    })();
+</script>
+{% end %}
